@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+const preco_unitario = 12.50;
+
+let quantidade = prompt("quantos cadernos você quer comprar?")
+
+quantidade = parseInt(quantidade);
+
+if (quantidade > 0){
+
+    const valor_total = quantidade * preco_unitario;
+
+    console.log(`Quantidade: ${quantidade} cadernos`);
+    console.log(`Total a pagar: ${valor_total}`);
+    alert( `você comprou ${quantidade} caderno(s) e o valor total deu: R$ ${valor_total}  `)
+
+}
+
+else{
+    alert( " Por favor, insira uma quantidade válida de caderno(s)")
+}
+
+</script>
+</body>
+</html>
