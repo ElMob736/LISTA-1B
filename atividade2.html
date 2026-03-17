@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    const precoCusto = 25.00;
+    const precoVenda = 40.00;
+
+    const lucroUnitario = precoVenda - precoCusto;
+    let quantidadeVendida = prompt("quantas camisas foram vendidas hoje?")
+
+    quantidadeVendida = parseInt(quantidadeVendida);
+
+    if( quantidadeVendida > 0 ){
+
+        const lucroTotal = quantidadeVendida * lucroUnitario;
+
+        console.log(`Quantidade vendida: ${quantidadeVendida}`);
+        console.log(`Lucro por unidade: R$ ${lucroUnitario.toFixed(2)}`);
+         console.log(`Lucro total do dia: ${lucroTotal}`);
+
+    alert(`O lucro total obtido com a venda de ${quantidadeVendida} camisetas foi de: R$ ${lucroTotal}`);
+
+} else {
+    alert("Erro: Por favor, insira um número válido de camisetas.");
+}
+    
+
+</script>
+
+</body>
+</html>
