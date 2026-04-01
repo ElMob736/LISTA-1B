@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Média Semanal</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  input { width: 80px; margin: 3px; padding: 5px; }
+  button { margin-top: 10px; padding: 8px; }
+</style>
+</head>
+<body>
+
+<h2>Vendas da Semana</h2>
+
+<div id="inputs"></div>
+
+<button onclick="calcular()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+// Criar 7 inputs automaticamente
+let container = document.getElementById("inputs");
+for (let i = 1; i <= 7; i++) {
+  container.innerHTML += `<input type="number" id="dia${i}" placeholder="Dia ${i}">`;
+}
+
+function calcular() {
+  let total = 0;
+  let maior = 0;
+
+  for (let i = 1; i <= 7; i++) {
+    let valor = parseFloat(document.getElementById(`dia${i}`).value) || 0;
+    total += valor;
+    if (valor > maior) maior = valor;
+  }
+
+  let media = total / 7;
+
+  document.getElementById("resultado").innerHTML = `
+    <p>Total da semana: R$ ${total.toFixed(2)}</p>
+    <p>Média diária: R$ ${media.toFixed(2)}</p>
+    <p>Maior venda: R$ ${maior.toFixed(2)}</p>
+  `;
+}
+</script>
+
+</body>
+</html>

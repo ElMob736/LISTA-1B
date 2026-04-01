@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Juros Simples</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  input, button { margin: 5px; padding: 8px; }
+</style>
+</head>
+<body>
+
+<h2>Calculadora de Juros Simples</h2>
+
+<label>Meses:</label>
+<input type="number" id="meses">
+<button onclick="calcular()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+function calcular() {
+  let capital = 1000;
+  let taxa = 0.05;
+  let meses = parseInt(document.getElementById("meses").value);
+
+  let juros = capital * taxa * meses;
+  let total = capital + juros;
+
+  let detalhes = "";
+  for (let i = 1; i <= meses; i++) {
+    let acumulado = capital + (capital * taxa * i);
+    detalhes += `<p>Mês ${i}: R$ ${acumulado.toFixed(2)}</p>`;
+  }
+
+  document.getElementById("resultado").innerHTML = `
+    <p>Juros total: R$ ${juros.toFixed(2)}</p>
+    <p>Total a pagar: R$ ${total.toFixed(2)}</p>
+    <h3>Detalhamento:</h3>
+    ${detalhes}
+  `;
+}
+</script>
+
+</body>
+</html>

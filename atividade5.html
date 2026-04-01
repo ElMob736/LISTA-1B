@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Comissão</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  input, button { margin: 5px; padding: 8px; }
+</style>
+</head>
+<body>
+
+<h2>Comissão do Vendedor</h2>
+
+<label>Total de vendas (R$):</label>
+<input type="number" id="vendas">
+<button onclick="calcular()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+function calcular() {
+  let vendas = parseFloat(document.getElementById("vendas").value);
+  let comissao = vendas * 0.05;
+  let salarioFinal = 1500 + comissao;
+
+  document.getElementById("resultado").innerHTML = `
+    <p>Total de vendas: R$ ${vendas.toFixed(2)}</p>
+    <p>Comissão: R$ ${comissao.toFixed(2)}</p>
+    <p>Salário total (R$1500 + comissão): R$ ${salarioFinal.toFixed(2)}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
